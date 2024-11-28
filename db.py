@@ -66,24 +66,6 @@ def save_index(database):
 
     print(f'Upserted all data to {INDEX}')
 
-
-
-'''
-query returns the ids
-description gets chunked with the other cols as metadata in each chunk
-
-!! the second faiss function uses IVF which speeds up for larger datasets
-
-    - could use hierarchical chunking
-
-    - find way to second-tier information such as reviews (or respond to input such as, 'what do people say about this?')
-
-    - find way to register price correctly
-
-
-can use weighted embeddings eg. to give metadata more importance
-'''
-
 def recursive_split(text, max_chunk_size=MAX_CHUNK_SIZE):
     if len(text) <= max_chunk_size:
         return [text]
